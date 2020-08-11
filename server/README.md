@@ -1,12 +1,48 @@
-# Funcionalidades
+# Proffy Backend
 
-## Conexões
+## How to start this project
 
-- Rota para listar o total de conexões realizadas;
-- Rota para criar uma nova conexão;
+Install the dependencies
 
-## Aulas
+`
+yarn
+yarn knex:migrate
+`
 
-- Rota para criar uma aula;
-- Rota para listar as aulas;
-  - Filtrar por matéria, dia da semana e horário;
+And then run the project
+
+`
+yarn start
+`
+
+## Routes
+
+### List Classes
+GET: /classes
+
+Query params:
+
+- week_day: number (0 to 6)
+- subject: string
+- time: string (00:00)
+
+### Create classes
+POST: /classes
+
+Body:
+
+- name: string
+- avatar: string
+- whatsapp: string
+- bio: string
+- cost: number
+- schedule: array
+  - week_day: number (0 to 6)
+  - from: string (00:00)
+  - to: string (00:00)
+
+### Get Connections
+GET: /connections
+
+### Create Connection
+POST: /connections
